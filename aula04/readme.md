@@ -1,0 +1,1 @@
+Adicionando os primeiros métodos a instância Vue
