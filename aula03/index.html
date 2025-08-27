@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        {{ mensagem }} <br>
+        Valor total: {{ valorTotal }} <br>
+        Logado: {{ logado }} <br>
+        Hobbies: {{ hobbies }} <br>
+        Nome: {{ perfil.nome }} <br>
+        Site: {{ perfil.site }} <br>
+        <!-- E afins.. -->
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: '#app',
+            data: { // váriaveis/atributos reativos
+                mensagem: 'Primeiro template controlado pelo Vue', // string
+                valorTotal: 150.47, // float
+                logado: false, // bool
+                hobbies: [
+                    'Dormir',
+                    'Colecionar vídeo games antigos',
+                    'Correr',
+                    'Trilhas'
+                ], // array
+                perfil: {
+                    nome: 'Paulo Victor',
+                    site: 'paulobarbosadev.tech',
+                    idade: 20,
+                    cursos: [
+                        { nome: 'Laravel', cargaHoraria: '75 horas' },
+                        { nome: 'Vue', cargaHoraria: '75 horas' },
+                        { nome: 'Desenvolvimento web completo e compacto', cargaHoraria: '75 horas' }
+                    ]
+                }
+            }
+        }) // vm = ViewModel
+
+    </script>
+</body>
+
+</html>
