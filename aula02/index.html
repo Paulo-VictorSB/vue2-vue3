@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        {{ mensagem }}
+    </div>
+
+    <script>    
+
+        const vm = new Vue({
+            el: '#app',
+            data: { // váriaveis/atributos reativos
+                mensagem: 'Primeiro template controlado pelo Vue'
+            }
+        }) // vm = ViewModel
+
+    </script>
+</body>
+</html>
