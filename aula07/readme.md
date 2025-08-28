@@ -1,0 +1,1 @@
+Diretiva V-Bind - Realizando o bind de atributos de tags HTML
