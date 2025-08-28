@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Teste com vue</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{ message }}</p>
+        <button @click="revert()">Inverter mensagem acima</button>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                message: "Mensagem a ser invertida"
+            },
+            methods: {
+                revert() {  
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>

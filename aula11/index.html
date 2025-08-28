@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" @keyup="imprimirTexto(1,5,value)">
+        <button v-on:click="mensagemAlerta()">OK</button>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                value: true
+            },
+            methods: {
+                imprimirTexto(a,b,c) {
+                    console.log(a)
+                    console.log(b)
+                    console.log(c)
+                },
+                mensagemAlerta() {
+                    alert('Free')
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
