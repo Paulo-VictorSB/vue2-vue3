@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .bg-blue {
+            background: linear-gradient(to left, #003cff, #1249ff);
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        {{ mensagem }}
+        <p :class="2 + 2 == 4 ? estilo : ''">
+            {{ mensagem }}
+        </p>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                mensagem: "Expressão",
+                estilo: 'bg-blue'
+            },
+            methods: {}
+        })
+
+    </script>
+</body>
+
+</html>
