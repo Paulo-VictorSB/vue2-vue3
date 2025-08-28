@@ -1,0 +1,1 @@
+Diretiva V-Bind - Sintaxe sugar e a sobreposição/encadeamento de valores
