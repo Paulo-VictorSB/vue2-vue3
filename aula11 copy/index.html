@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .borda {
+            border: 1px solid;
+        }
+
+        .div-principal {
+            width: 200px;
+            height: 200px;
+        }
+
+        .div-comum {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+        .vermelho {
+            background-color: red;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .branco {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="borda div-principal" :class="cor">
+            Cor: {{ cor }}<br>
+            X: {{ x }}<br>
+            Y: {{ y }}
+        </div>
+        <hr>
+        <div @mouseout="mudarCor('branco')" @mouseover="mudarCor('azul')" class="borda div-comum"></div>
+        <div @mouseout="mudarCor('branco')" @mouseover="mudarCor('vermelho')" class="borda div-comum"></div>
+        <div @mouseout="mudarCor('branco')" @mouseover="mudarCor('verde')" class="borda div-comum"></div>
+        <div @mousemove="cordenadas($event)" @mouseout="resetValue" class="borda div-comum"></div>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                cor: 'branco',
+                x: 0,
+                y: 0
+            },
+            methods: {
+                mudarCor(c) {
+                    this.cor = c
+                },
+                cordenadas(c) {
+                    this.x = c.x;
+                    this.y = c.y;
+                },
+                resetValue() {
+                    this.x = 0,
+                    this.y = 0
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

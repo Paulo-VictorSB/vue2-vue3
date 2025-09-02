@@ -1,0 +1,1 @@
+Hands on - pratica com data, methos, template string, v-bind e v-on
