@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button @click="exibir = !exibir">
+            <span v-if="exibir">Esconder Saldo</span>
+            <span v-if="!exibir">Mostrar Saldo</span>
+        </button>
+        <p>Saldo: <span v-if="exibir">R$ {{ saldo }}</span></p>
+        <hr>
+        Idade: <input type="number" @blur="verificarMaioridade()" id="idade">
+        <span v-if="maioridade">Maior de idade</span>
+        <span v-else>Menor de idade</span>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                saldo: 100,
+                exibir: true,
+                maioridade: '',
+            },
+            methods: {
+                verificarMaioridade() {
+                    if (idade.value < 18) {
+                        return this.maioridade = false;
+                    }
+
+                    this.maioridade = true;
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
