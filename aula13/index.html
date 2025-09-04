@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <a href="http://paulobarbosadev.tech"
+            target="_blank"
+            @click.prevent="previnirComportamentoPadrao()"    
+        >[LINK]</a>
+        <br>
+        Mensagem: {{ msg }}
+        <hr>
+        <button @click.once="executarUmaVez()" >[Botão]</button>
+        <p>Cliques: {{ cliques }}</p>
+        <hr>
+        <form @submit.prevent="previnirUmaVez()">
+            <button type="submit">[Enviar]</button>
+        </form>
+        <p>Formulário: {{ formulario }}</p>
+        <hr>
+        <input type="text" @keyup="capturandoTeclas($event)" >
+        <p>Teclas: {{ teclas }}</p>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: '',
+                cliques: 0,
+                formulario: '',
+                teclas: ''
+            },
+            methods: {
+                previnirComportamentoPadrao() {
+                    this.msg = "comportamento padrão ativado";
+                },
+                executarUmaVez() {
+                    this.cliques++;
+                },
+                previnirUmaVez() {
+                    this.formulario = "previnindo o comportamento padrão";
+                },
+                capturandoTeclas(event) {
+                    this.teclas += event.key;
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
