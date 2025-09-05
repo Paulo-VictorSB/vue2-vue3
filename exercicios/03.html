@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
 <body>
     
@@ -11,9 +12,40 @@
         3. Login simples (v-if/v-else)
         No data, crie logado: false
         - Se false, mostre: "Você precisa logar" + botão "Login".
-        - Se true, mostre: "Você precisa logar" + botão "Logout".
+        - Se true, mostre: "Bem-vindo, usuário!" + botão "Logout".
         - Troque o estado com métodos
     -->
 
+    <div id="app">
+        <div id="login">
+            <div v-if="!logado">
+                <h3>Você precisa logar</h3>
+                <br>
+                <button @click="login()">Login</button>
+            </div>
+            <div v-else>
+                <h3>Bem vindo, usuário!</h3>
+                <br>
+                <button @click="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                logado: false
+            },
+            methods: {
+                login() {
+                    this.logado = true
+                },
+                logout() {
+                    this.logado = false
+                }   
+            }
+        })
+    </script>
 </body>
 </html>
