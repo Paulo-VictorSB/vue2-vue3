@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
 <body>
     
@@ -13,6 +14,32 @@
         - O valor deve vir do data.
         - Use métodos com parametros.
     -->
+    
+    <div id="app">
+        <button @click="adicionar(1)">+1</button>
+        <button @click="adicionar(5)">+5</button>
+        <button @click="reset()">Reset</button>
+        {{
+            resultado
+        }}
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                resultado: 0
+            },
+            methods: {
+                adicionar(value) {
+                    this.resultado += value;
+                },
+                reset() {
+                    this.resultado = 0;
+                }
+            }
+        })
+    </script>
 
 </body>
 </html>
