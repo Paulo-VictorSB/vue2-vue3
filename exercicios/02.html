@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
 <body>
     
@@ -13,6 +14,27 @@
         - Cada vez que o usuário digitar algo, capture esse evento.
         - Mostre em tempo real o texto digitado em um <p>.
     -->
+    <div id="app">
+        <input type="text" @keyup="setLetra($event)" ></input>
+        <hr>
+        <p>
+            {{ texto }}
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                texto: ''
+            },
+            methods: {
+                setLetra(event) {
+                    this.texto += event.key
+                }
+            }
+        })
+    </script>
 
 </body>
 </html>
