@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
+
 <body>
-    
+
     <!--
         4. v-show vs v-if
         Monte um card com um botão "Mostrar detalhes"
@@ -14,5 +17,53 @@
         - Usando v-show, faça um outro card que apenas esconde/mostra o conteúdo sem remover do DOM
     -->
 
+    <div id="app">
+        <h1>V-IF</h1>
+        <hr>
+        <div v-if="!mostrarvif">
+            <button @click="mostrarvif = true">Mostrar detalhes</button>
+        </div>
+        <div v-else>
+            <button @click="mostrarvif = false">Ocultar detalhes</button>
+        </div>
+
+        <div v-if="mostrarvif">
+            <ul>
+                <li>Nome: <span>Paulo</span></li>
+                <li>Sobrenome: <span>Barbosa</span></li>
+                <li>Telefone: <span>81999906183</span></li>
+            </ul>
+        </div>
+
+        <h1>V-SHOW</h1>
+        <hr>
+        <div v-if="!mostrarvshow">
+            <button @click="mostrarvshow = true">Mostrar detalhes</button>
+        </div>
+        <div v-else>
+            <button @click="mostrarvshow = false">Ocultar detalhes</button>
+        </div>
+
+        <div v-show="mostrarvshow">
+            <ul>
+                <li>Nome: <span>Paulo</span></li>
+                <li>Sobrenome: <span>Barbosa</span></li>
+                <li>Telefone: <span>81999906183</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                mostrarvif: false,
+                mostrarvshow: false
+            },
+            methods: {}
+        })
+    </script>
+
 </body>
+
 </html>
