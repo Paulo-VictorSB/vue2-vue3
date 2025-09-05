@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <style>
+        #resultado {
+            border: 5px solid black;
+            height: 200px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     
@@ -14,6 +23,25 @@
         - troque a cor do quadrado ao clicar em botões "Vermelho", "Azul", "Verde"
         - Use v-bind
     -->
+    <div id="app">
+        <div id="resultado" :style = "{backgroundColor: cor}"></div>
+        <button @click="mudarCor('red')">Vermelho</button>
+        <button @click="mudarCor('green')">Verde</button>
+        <button @click="mudarCor('blue')">Azul</button>
+    </div>
 
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                cor: ""
+            },
+            methods: {
+                mudarCor(cor) {
+                    this.cor = cor;
+                }
+            }
+        })
+    </script>
 </body>
 </html>
