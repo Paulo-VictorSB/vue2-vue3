@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
 <body>
     
@@ -17,5 +18,33 @@
         - Mostre o estado com v-if e v-else
     -->
 
+    <div id="app">
+        <button v-if="ligado" @click="alternarLigadoDesligado('desligar')">Desligar</button>
+        <button v-else @click="alternarLigadoDesligado('ligar')">Ligar</button>
+        <hr>
+        <p v-text="mensagem"></p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                mensagem: "Ligado",
+                ligado: true
+            },
+            methods: {
+                alternarLigadoDesligado(msg) {
+                    if(msg == "ligar") {
+                        this.mensagem = "Ligado"
+                        this.ligado = true
+                        return
+                    }
+
+                    this.mensagem = "Desligado"
+                    this.ligado = false
+                }
+            }
+        })
+    </script>
 </body>
 </html>
