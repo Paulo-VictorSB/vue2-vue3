@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
 <body>
     
@@ -14,5 +15,30 @@
         - Exiba em baixo a mensagem "Formulario enviado com sucesso!"
     -->
 
+    <div id="app">
+        <form @submit.prevent="previnirFormPadrao()">
+            <h1>Submeter formulario</h1>
+            <hr>
+            <input type="text">
+            <input type="submit" value="Submter">
+            {{
+                msg
+            }}
+        </form>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: ""
+            },
+            methods: {
+                previnirFormPadrao() {
+                    this.msg = "Formulario enviado com sucesso!"
+                }
+            }
+        })
+    </script>
 </body>
 </html>
