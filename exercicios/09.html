@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../material-do-curso/framework/vue.js"></script>
 </head>
+
 <body>
-    
+
     <!--
         9.Troca de imagens com v-bind
         Crie duas imagens no data
@@ -14,5 +17,33 @@
         - Dois botões permitem trocar a imagem exibida
     -->
 
+    <div id="app">
+        <button @click="trocarImagem(0)">Ferrari</button>
+        <button @click="trocarImagem(1)">Bugatti</button>
+        <hr>
+        <img :src="path" alt="" height="300px">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                path: '',
+                ferrariPath: 'material-de-apoio/img1.jpg',
+                bugattiPath: 'material-de-apoio/img2.jpg'
+            },
+            methods: {
+                trocarImagem(pathKey) {
+                    const images = [
+                        this.ferrariPath,
+                        this.bugattiPath
+                    ]
+
+                    this.path = images[pathKey]
+                }
+            }
+        })
+    </script>
 </body>
+
 </html>
