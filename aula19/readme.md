@@ -1,0 +1,1 @@
+24. Diretiva V-Once - Evitando que elementos HTML sejam renderizados novamente
