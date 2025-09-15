@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Permite realizar atualizações de mão dupla entre os atributos da instância do vue e os capmos de formulário dos templates. -->
+
+    <!-- To Way data-bind -->
+
+
+    <div id="app">
+        <!-- <input type="text" :value="paciente" @keyup="paciente = $event.target.value">
+        {{ paciente }} -->
+
+        <!-- <input type="text" v-model="paciente">
+        {{ paciente }} -->
+
+        <input type="number" v-model="p1"> + <input type="number" v-model="p2"> = {{ soma }}
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                p1: 0,
+                p2: 0
+            },
+            methods: {},
+            computed: {
+                soma() {
+                    return parseFloat(this.p1) + parseFloat(this.p2);
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
