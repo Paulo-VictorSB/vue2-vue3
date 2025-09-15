@@ -1,0 +1,1 @@
+Trabalhando com propriedades computadas (computed) parte 1 e 2

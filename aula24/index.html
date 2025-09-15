@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h4>Adicionar Pacientes</h4>
+        <span>Nome: <input type="text" id="inputNome"></span>
+        <span>Idade: <input type="text" id="inputIdade"></span>
+        <span>Plano: <input type="text" id="inputPlano"></span>
+        <button @click="adicionarPaciente()">Adicionar</button>
+        <hr>
+        <h4>Ultimo paciente cadastrado</h4>
+        <p v-if="pacientes.length > 0">
+            {{ ultimoPaciente }}
+        </p>
+        <hr>
+        <h4>Pacientes com plano Ouro</h4>
+        <p v-for="paciente in pacientesPlanoOuro">
+            Nome: {{ paciente.nome }}
+        </p>
+        <hr>
+        <h4>Pacientes cadastrados</h4>
+        <p v-for="paciente in pacientes">
+            <span>
+                Nome: {{ paciente.nome }}
+                <button @click="removerPorId(paciente.id)">Remover paciente</button>
+            </span>
+        </p>
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                pacientes: []
+            },
+            methods: {
+                adicionarPaciente() {
+                    this.pacientes.push({
+                        id: this.pacientes.length + 1,
+                        nome: inputNome.value,
+                        idade: inputIdade.value,
+                        plano: inputPlano.value
+                    })
+                },
+                removerPorId(id) {
+                    this.pacientes.splice(id - 1, 1);
+                }
+            },
+            computed: {
+                ultimoPaciente() {
+                    let key = this.pacientes.length - 1;
+                    let txt = `
+                        Id: ${this.pacientes[key].id}, 
+                        Paciente: ${this.pacientes[key].nome}, 
+                        Idade: ${this.pacientes[key].idade}, 
+                        Plano: ${this.pacientes[key].plano}
+                    `;
+
+                    return txt;
+                },
+                pacientesPlanoOuro() {
+                    return this.pacientes.filter(item => item.plano == "Ouro");
+                }
+            }
+            // são métodos que retornam valores que são computados dinamicamente, são usandos para diminuir as expressões de lógicas contidas nos nossos templates.
+        })
+
+    </script>
+</body>
+
+</html>
