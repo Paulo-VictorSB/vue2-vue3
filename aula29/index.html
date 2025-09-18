@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../material-do-curso/framework/vue.js"></script>
+    <title>Document</title>
+    <style></style>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>Manipulando CSS com VueJS</h1>
+        <p :class="[estilo1, estilo2, estilo3 ]">
+            Definindo classes com Array
+        </p>
+        <!-- <button @click="cDanger = !cDanger">
+            <span v-text="cDanger ? 'Remover background' : 'Adicionar background'"></span>
+        </button>
+        <button @click="cWhite = !cWhite">
+            <span v-text="cWhite ? 'Remover cor branca' : 'Adicionar cor branca'"></span>
+        </button>
+        <button @click="cEmphasys = !cEmphasys">
+            <span v-text="cEmphasys ? 'Remover destaque' : 'Adicionar destaque'"></span>
+        </button> -->
+    </div>
+
+    <script>
+
+        const vm = new Vue({
+            el: " #app", 
+            data: {
+                estilo1 : 'bg-danger',
+                estilo2 : 'text-white',
+                estilo3 : 'empashys'
+            }
+        }) 
+
+    </script>
+</body>
+
+</html>
