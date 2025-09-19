@@ -1,0 +1,1 @@
+Utilizando objetos para definir estilos visuais por meio do atributo style

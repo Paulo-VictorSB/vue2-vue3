@@ -1,1 +1,1 @@
-Utilizando objetos para definir estilos visuais por meio do atributo style
+Utilizando arrays para definir estilos visuais por meio do atributo class
