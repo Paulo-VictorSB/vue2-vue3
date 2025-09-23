@@ -1,1 +1,1 @@
-Aplicando estilos com propriedades computadas
+Referenciando elementos HTML com $refs
