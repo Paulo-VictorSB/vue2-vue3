@@ -32,7 +32,11 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "vue/no-static-inline-styles": ["error",
+      {"allowBinding": false}
+    ]
+    }
   },
   "browserslist": [
     "> 1%",
