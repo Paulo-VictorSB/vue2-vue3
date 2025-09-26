@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader/>
+    <Header/>
     <MainContent/>
   </div>
 </template>
@@ -12,7 +12,7 @@ import MainContent from './components/layouts/MainContent.vue'
 export default {
   name: 'App',
   components: {
-    AppHeader,
+    Header: AppHeader,
     MainContent
   }
 }
