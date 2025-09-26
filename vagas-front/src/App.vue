@@ -1,14 +1,19 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <AppHeader/>
+    <MainContent/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/layouts/AppHeader.vue'
+import MainContent from './components/layouts/MainContent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppHeader,
+    MainContent
   }
 }
 </script>
