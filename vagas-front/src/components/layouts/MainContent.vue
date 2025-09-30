@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import HomeView from '../views/Home.vue'
-import PublicarVaga from '../views/PublicarVaga.vue'
+import HomeView from '@/components/views/Home.vue'
+import PublicarVaga from '@/components/views/PublicarVaga.vue'
 
 export default {
   components: {
