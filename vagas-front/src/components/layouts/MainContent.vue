@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <h1>{{ titulo }}</h1>
+    <button @click="atualizarComponente()">Atualizar</button>
     <HomeView/>
     <publicarVaga/>
   </div>
@@ -14,9 +16,14 @@ export default {
     HomeView,
     PublicarVaga
   },
-  methods: {},
+  methods: {
+    atualizarComponente() {
+      this.titulo += "*"
+    }
+  },
   data: () => ({
-    teste: 'O componente foi criado'
+    teste: 'O componente foi criado',
+    titulo: 'Componente conteudo'
   }),
   beforeCreate() {
     console.log("Antes de criar")
@@ -38,6 +45,22 @@ export default {
   // Quando o vue monta de fato o template já compilado dentro de um elemento html ele aciona o lifecycle mounted() indicando assim que o componente foi montado.]
   mounted() {
     console.log('Componente Montado')
+  },
+
+  // beforeUpdate e updated são gatilhos disparados no componente antes e após uma atualização do mesmo.
+  beforeUpdate() {
+    console.log('Antes de atualizar')
+  },
+  updated() {
+    console.log('Atualizado')
+  },
+
+  // beforeUnmout e unmounted são gatilhso disparados no componente antes e após a desmontagem do componente
+  beforeUnmount() {
+    console.log("Componente MainContent antes de ser destruido")
+  },
+  unmounted() {
+    console.log("Componente MainContent destruido")
   }
 }
 

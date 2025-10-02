@@ -1,7 +1,9 @@
 <template>
   <div>
+    <h1>Componente App</h1>
+    <button @click="desmontarComponente()">Desmontar o componente Conteudo</button>
     <Header/>
-    <MainContent/>
+    <MainContent v-if="visibility"/>
   </div>
 </template>
 
@@ -14,6 +16,14 @@ export default {
   components: {
     Header: AppHeader,
     MainContent
+  },
+  data: () => ({
+    visibility: true 
+  }),
+  methods: {
+    desmontarComponente() {
+      this.visibility = false
+    }
   }
 }
 </script>
