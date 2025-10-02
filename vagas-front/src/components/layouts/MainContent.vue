@@ -2,8 +2,16 @@
   <div class="container">
     <h1>{{ titulo }}</h1>
     <button @click="atualizarComponente()">Atualizar</button>
-    <HomeView/>
-    <publicarVaga/>
+
+    <!-- Renderizar os componentes de forma dinamica  -->
+
+    <button @click="conteudo = 'HomeView' ">Home</button>
+    <button @click="conteudo = 'PublicarVaga'">Publicar Vaga</button>
+    
+    <component :is="conteudo" />
+
+    <!-- <HomeView/>
+    <publicarVaga/> -->
   </div>
 </template>
 
@@ -23,7 +31,8 @@ export default {
   },
   data: () => ({
     teste: 'O componente foi criado',
-    titulo: 'Componente conteudo'
+    titulo: 'Componente conteudo',
+    conteudo: 'HomeView'
   }),
   beforeCreate() {
     console.log("Antes de criar")
