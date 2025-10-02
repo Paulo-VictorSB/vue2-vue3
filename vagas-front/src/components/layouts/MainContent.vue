@@ -1,25 +1,26 @@
 <template>
   <div class="container">
-    <HomeView/>
-    <publicarVaga/>
+    <keep-alive>
+      <component :is="view" />
+    </keep-alive>
   </div>
 </template>
 
 <script>
-import HomeView from '@/components/views/Home.vue'
-import PublicarVaga from '@/components/views/PublicarVaga.vue'
+import HomeView from "@/components/views/Home.vue";
+import PublicarVaga from "@/components/views/PublicarVaga.vue";
 
 export default {
   components: {
     HomeView,
-    PublicarVaga
+    PublicarVaga,
   },
   methods: {},
-  data: () => ({}),
-}
-
+  data: () => ({
+    view: "HomeView",
+  }),
+};
 </script>
 
 <style>
-
 </style>
