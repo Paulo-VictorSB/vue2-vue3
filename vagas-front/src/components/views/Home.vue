@@ -14,25 +14,19 @@
 
     <div class="row mt-5">
       <div class="col-4">
-        <IndicadorVue
-          titulo = "Vagas abertas"
-          valor = "100"
-        />
+        <IndicadorVue titulo="Vagas abertas" valor="100" />
+      </div>
+
+      <div class="col-4">
+        <IndicadorVue titulo="Profissionais cadastrados" valor="225" />
       </div>
 
       <div class="col-4">
         <IndicadorVue
-          titulo = "Profissionais cadastrados"
-          valor = "225"
+          titulo="Visitantes online"
+          :valor="usuariosOnline"
+          :alt="true"
         />
-      </div>
-
-      <div class="col-4">
-        <IndicadorVue
-          titulo = "Visitantes online"
-          valor = "25"
-          :alt = Boolean
-        /> 
       </div>
     </div>
   </div>
@@ -40,13 +34,27 @@
 
 <script>
 import PesquisarVaga from "@/components/utils/PesquisarVaga.vue";
-import IndicadorVue from '@/components/utils/Indicador.vue';
+import IndicadorVue from "@/components/utils/Indicador.vue";
 
 export default {
   name: "HomeView",
   components: {
     PesquisarVaga,
-    IndicadorVue
+    IndicadorVue,
+  },
+  data: () => ({
+    usuariosOnline: 0,
+  }),
+  methods: {
+    getUsuariosOnline() {
+      this.usuariosOnline = Math.floor(Math.random() * 101);
+    },
+  },
+  created() {
+    this.getUsuariosOnline()
+    setInterval(() => {
+      this.getUsuariosOnline();
+    }, 60000);
   },
 };
 </script>
