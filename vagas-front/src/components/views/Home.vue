@@ -14,15 +14,25 @@
 
     <div class="row mt-5">
       <div class="col-4">
-        <IndicadorVue/>
+        <IndicadorVue
+          titulo = "Vagas abertas"
+          valor = "100"
+        />
       </div>
 
       <div class="col-4">
-        <IndicadorVue/>
+        <IndicadorVue
+          titulo = "Profissionais cadastrados"
+          valor = "225"
+        />
       </div>
 
       <div class="col-4">
-        <IndicadorVue/> 
+        <IndicadorVue
+          titulo = "Visitantes online"
+          valor = "25"
+          :alt = Boolean
+        /> 
       </div>
     </div>
   </div>

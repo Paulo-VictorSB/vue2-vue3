@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Vagas</a>
+        <a class="navbar-brand ms-2" href="#">Vagas</a>
         <button
           class="navbar-toggler"
           type="button"
