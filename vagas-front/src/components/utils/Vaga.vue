@@ -28,11 +28,6 @@ export default {
     salario: {
       type: Number,
       required: true,
-      validator(prop) {
-        let val = false
-        Number(prop) < 3000 ? val = true : val = false;
-        return val;
-      }
     },
     modalidade: {
       type: String,
