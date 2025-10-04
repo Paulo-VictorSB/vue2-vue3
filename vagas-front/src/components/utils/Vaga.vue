@@ -15,21 +15,36 @@
 export default {
   name: "VagaVue",
   props: {
-    titulo: String,
-    descricao: String,
-    salario: Number,
-    modalidade: String,
-    tipo: String,
-    publicacao: String,
+    titulo: {
+      type: String,
+      required: true
+    },
+    descricao: {
+      type: String,
+      required: true
+    },
+    salario: {
+      type: Number,
+      required: true,
+      validator(prop) {
+        let val = false
+        Number(prop) < 3000 ? val = true : val = false;
+        return val;
+      }
+    },
+    modalidade: {
+      type: String,
+      required: true
+    },
+    tipo: {
+      type: String,
+      required: true
+    },
+    publicacao: {
+      type: String,
+      required: true
+    },
   },
-  created() {
-    console.log(typeof this.titulo)
-    console.log(typeof this.descricao)
-    console.log(typeof this.salario)
-    console.log(typeof this.modalidade)
-    console.log(typeof this.tipo)
-    console.log(typeof this.publicacao)
-  }
 };
 </script>
 
