@@ -86,12 +86,16 @@ export default {
 
       if (!vagas) vagas = [];
 
+      let tempoDecorrido = Date.now()
+      let dataPublicacao = new Date(tempoDecorrido)
+
       vagas.push({
         titulo: this.titulo,
         descricao: this.descricao,
         salario: this.salario,
         modalidade: this.modalidade,
         tipo: this.tipo,
+        publicacao: dataPublicacao.toISOString()
       });
 
       localStorage.setItem("vagas", JSON.stringify(vagas));
