@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card shadow">
     <div class="card-header bg-dark text-white">{{ titulo }}</div>
     <div class="card-body">{{ descricao }}</div>
     <div class="card-footer">
@@ -17,11 +17,19 @@ export default {
   props: {
     titulo: String,
     descricao: String,
-    salario: String,
+    salario: Number,
     modalidade: String,
     tipo: String,
     publicacao: String,
   },
+  created() {
+    console.log(typeof this.titulo)
+    console.log(typeof this.descricao)
+    console.log(typeof this.salario)
+    console.log(typeof this.modalidade)
+    console.log(typeof this.tipo)
+    console.log(typeof this.publicacao)
+  }
 };
 </script>
 
