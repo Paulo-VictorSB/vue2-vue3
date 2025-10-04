@@ -95,7 +95,7 @@ export default {
         salario: this.salario,
         modalidade: this.modalidade,
         tipo: this.tipo,
-        publicacao: dataPublicacao.toISOString()
+        publicacao: dataPublicacao.toLocaleString('pt-BR')
       });
 
       localStorage.setItem("vagas", JSON.stringify(vagas));
