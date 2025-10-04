@@ -32,14 +32,7 @@
 
     <div class="row mt-5" v-for="(vaga, index) in vagas" :key="index">
       <div class="col">
-        <VagaVue 
-          :titulo = "vaga.titulo"
-          :descricao = "vaga.descricao"
-          :salario = "vaga.salario"
-          :modalidade = "vaga.modalidade"
-          :tipo = "vaga.tipo"
-          :publicacao = "vaga.publicacao"
-        />
+        <VagaVue v-bind="vaga"/>
       </div>
     </div>
 
@@ -69,44 +62,43 @@ export default {
         modalidade: "Home Office",
         tipo: "PJ",
         publicacao: "2021-10-10",
-      } 
-      // ,
-      // {
-      //   titulo: "Programador JavaScript Angular",
-      //   descricao:
-      //     "Profissional com conhecimentos avançados em JavaScript e Angular.",
-      //   salario: 5000,
-      //   modalidade: "Presencial",
-      //   tipo: "CLT",
-      //   publicacao: "2021-10-07",
-      // },
-      // {
-      //   titulo: "Programador JavaScript Vue",
-      //   descricao:
-      //     "Profissional com conhecimentos avançados em JavaScript e Vue.",
-      //   salario: 5000,
-      //   modalidade: "Home Office",
-      //   tipo: "CLT",
-      //   publicacao: "2021-10-06",
-      // },
-      // {
-      //   titulo: "Analista de Banco de Dados Sênior",
-      //   descricao:
-      //     "Domínio dos bancos de dados SQL Server, Oracle, Postgre e MySQL",
-      //   salario: 9000,
-      //   modalidade: "Presencial",
-      //   tipo: "PJ",
-      //   publicacao: "2021-10-06",
-      // },
-      // {
-      //   titulo: "Programador Web Júnior",
-      //   descricao:
-      //     "Conhecimentos básicos em HTML, CSS, JavaScript, Bootstrap, PHP e MySQL",
-      //   salario: 3000,
-      //   modalidade: "Presencial",
-      //   tipo: "CLT",
-      //   publicacao: "2021-10-05",
-      // },
+      },
+      {
+        titulo: "Programador JavaScript Angular",
+        descricao:
+          "Profissional com conhecimentos avançados em JavaScript e Angular.",
+        salario: 5000,
+        modalidade: "Presencial",
+        tipo: "CLT",
+        publicacao: "2021-10-07",
+      },
+      {
+        titulo: "Programador JavaScript Vue",
+        descricao:
+          "Profissional com conhecimentos avançados em JavaScript e Vue.",
+        salario: 5000,
+        modalidade: "Home Office",
+        tipo: "CLT",
+        publicacao: "2021-10-06",
+      },
+      {
+        titulo: "Analista de Banco de Dados Sênior",
+        descricao:
+          "Domínio dos bancos de dados SQL Server, Oracle, Postgre e MySQL",
+        salario: 9000,
+        modalidade: "Presencial",
+        tipo: "PJ",
+        publicacao: "2021-10-06",
+      },
+      {
+        titulo: "Programador Web Júnior",
+        descricao:
+          "Conhecimentos básicos em HTML, CSS, JavaScript, Bootstrap, PHP e MySQL",
+        salario: 3000,
+        modalidade: "Presencial",
+        tipo: "CLT",
+        publicacao: "2021-10-05",
+      },
     ],
   }),
   methods: {
