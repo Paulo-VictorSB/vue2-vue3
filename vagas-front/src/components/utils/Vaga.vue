@@ -4,8 +4,8 @@
     <div class="card-body">{{ descricao }}</div>
     <div class="card-footer">
       <small class="text-muted">
-        Sálario: R${{ salario }} | Modalidade: {{ modalidade }} |
-        Tipo: {{ tipo }} | Publicação: {{ publicacao }}
+        Sálario: R${{ salario }} | Modalidade: {{ getModalidade }} |
+        Tipo: {{ getTipo }} | Publicação: {{ publicacao }}
       </small>
     </div>
   </div>
@@ -42,6 +42,14 @@ export default {
       required: true
     },
   },
+  computed: {
+    getModalidade() {
+      return this.modalidade == "1" ? 'Home Office' : 'Presencial';
+    },
+    getTipo() {
+      return this.tipo == "1" ? 'CLT' : 'PJ';
+    }
+  }
 };
 </script>
 
