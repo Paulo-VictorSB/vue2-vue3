@@ -21,7 +21,9 @@ export default {
     },
     descricao: {
       type: String,
-      required: true
+      default() {
+        return "*".repeat(30);
+      }
     },
     salario: {
       type: Number,
