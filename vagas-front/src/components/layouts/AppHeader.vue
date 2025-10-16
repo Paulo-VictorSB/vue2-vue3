@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" @click="navegarPara('HomeView')" role="button">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Publicar vaga</a>
+              <a class="nav-link" @click="navegarPara('PublicarVaga')" role="button">Publicar vaga</a>
             </li>
           </ul>
         </div>
@@ -30,7 +30,16 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    navegarPara(vaga) {
+      this.$emit('navegarPara', vaga);
+    }
+  }
+}
 </script>
-
-<style>
+<style scoped>
+a:hover {
+  cursor: pointer;
+}
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div>
-    <Header/>
-    <MainContent/>
+    <Header @navegarPara="switchView($event)"/>
+    <MainContent
+      :view=view
+    />
   </div>
 </template>
 
@@ -15,7 +17,13 @@ export default {
     Header: AppHeader,
     MainContent
   },
-  data: () => ({}),
-  methods: {}
+  data: () => ({
+    view: "HomeView"
+  }),
+  methods: {
+    switchView(view) {
+      this.view = view
+    }
+  },
 }
 </script>

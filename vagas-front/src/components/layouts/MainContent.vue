@@ -1,12 +1,10 @@
 <template>
   <div class="container">
-    <div class="m-2">
-      <button @click="view = 'HomeView'" class="btn btn-outline-dark me-2">Home</button>
-      <button @click="view = 'PublicarVaga'" class="btn btn-outline-dark">Publicar Vaga</button>
-    </div>
-    <keep-alive>
-      <component :is="view" />
-    </keep-alive>
+    <transition name="fade" mode="out-in">
+      <keep-alive>
+        <component :is="view" />
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
@@ -20,11 +18,21 @@ export default {
     PublicarVaga,
   },
   methods: {},
-  data: () => ({
-    view: "HomeView",
-  }),
+  data: () => ({}),
+  props: {
+    view: {
+      required: true,
+      type: String,
+    },
+  },
 };
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
 </style>
