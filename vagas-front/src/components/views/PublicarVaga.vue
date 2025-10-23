@@ -36,7 +36,7 @@
       <div class="col">
         <label class="form-label">Modalidade</label>
         <br />
-        <select name="" id="modalidade" v-model="modalidade">
+        <select name="" id="modalidade" v-model="modalidade" class="form-select">
           <option value="" disabled>--Selecione</option>
           <option value="1">Home Office</option>
           <option value="2">Presencial</option>
@@ -50,7 +50,7 @@
       <div class="col">
         <label class="form-label">Tipo de contratação</label>
         <br />
-        <select name="" id="tipo" v-model="tipo">
+        <select name="" id="tipo" v-model="tipo" class="form-select">
           <option value="" disabled>--Selecione</option>
           <option value="1">CLT</option>
           <option value="2">PJ</option>
@@ -99,6 +99,7 @@ export default {
       });
 
       localStorage.setItem("vagas", JSON.stringify(vagas));
+      this.emitter.emit('alerta')
       this.resetarForm();
     },
     resetarForm() {
