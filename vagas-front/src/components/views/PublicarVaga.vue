@@ -99,7 +99,15 @@ export default {
       });
 
       localStorage.setItem("vagas", JSON.stringify(vagas));
+      this.resetarForm();
     },
+    resetarForm() {
+      this.titulo = "";
+      this.descricao = "";
+      this.salario = "";
+      this.modalidade = "";
+      this.tipo = "";
+    }
   },
 };
 </script>
